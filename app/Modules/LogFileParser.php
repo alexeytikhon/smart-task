@@ -35,6 +35,9 @@ class LogFileParser
         $this->arraysSort();
     }
 
+    /**
+     * @throws FileNotFoundException fills array with each view per address
+     */
     protected function getAllVisitsPerPage() {
         if (file_exists($this->filename)) {
             foreach (file($this->filename) as $line) {
@@ -46,6 +49,9 @@ class LogFileParser
         }
     }
 
+    /**
+     * Counts unique & total page visits
+     */
     protected function countPagesVisits() {
         foreach ($this->addressesArray as $key=>$value){
             $this->uniqueVisitsArray[$key] = count(array_unique($value));
@@ -53,17 +59,26 @@ class LogFileParser
         }
     }
 
+    /**
+     * Sorting arrays in descending order
+     */
     protected function arraysSort()
     {
         arsort($this->uniqueVisitsArray);
         arsort($this->totalVisitsArray);
     }
 
+    /**
+     * @return array Returns an unique visits array
+     */
     public function getUniqueVisits()
     {
         return $this->uniqueVisitsArray;
     }
 
+    /**
+     * @return array Returns a total visits array
+     */
     public function getTotalVisits()
     {
         return $this->totalVisitsArray;

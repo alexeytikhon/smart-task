@@ -74,7 +74,7 @@ class ParseLogCommand extends Command
             );
 
         } catch (FileNotFoundException $e) {
-            $this->error($e);
+            $this->error('File Not Found');
         }
 
     }
