@@ -1,24 +1,22 @@
-# Lumen PHP Framework
+**Smart-task**
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
+This script implements a console command that gets data from the log file and outputs them in a structured form.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+The script is implemented on the Lumen framework and uses its tools to work with the CLI.
 
-## Official Documentation
+Required PHP version : **7.3+**
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+**Installation steps:**
 
-## Contributing
+1) Load necessary dependencies via composer - `composer install` at project's root
+2) Create `.env` file at the root of the project with content similar to `.env.example`
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Command execution:**
 
-## Security Vulnerabilities
+Command receives `filename` as param - path to file on your env
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+`php artisan log:parse {filename}` 
 
-## License
+**Running tests:**
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`php vendor/bin/codecept run` from project's root
